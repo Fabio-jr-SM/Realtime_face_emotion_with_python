@@ -18,7 +18,7 @@ while True:
         break
     
     # Analyze the frame
-    results = DeepFace.analyze(frame, actions=['age'], enforce_detection=False)
+    results = DeepFace.analyze(frame, actions=['emotion'], enforce_detection=False)
     
     # Extract the first result
     result = results[0]
@@ -32,7 +32,7 @@ while True:
     font = cv2.FONT_HERSHEY_SIMPLEX
 
     cv2.putText(frame,
-                result['age'],
+                result['dominant_emotion'],
                 (50, 50),
                 font, 3,
                 (0, 0, 255),
